@@ -1,6 +1,6 @@
-# whatsappExtension
+# whatsapp-audio-speed
 
-Extension for Browse. Listen whatSApp Audio in 2x. 
+Extension for whatsapp web. Listen whatsapp audio faster. 
 
 ![Listen](what.png)
 
