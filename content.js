@@ -1,24 +1,33 @@
 const interval = setInterval(() => {
+
   const header = document.querySelector("._1QUKR");
   if(header){
     console.log(header)
     clearInterval(interval)
-  }
+    
+    const button = document.createElement("button")
 
-  const button = document.createElement("button")
-  button.innerHTML = "1x"
-  button.classList.add("twoTimesButton")
+    button.innerHTML = "1x"
+    button.classList.add("speed-btn")
 
-
-  button.addEventListener("click",() => {
-   event.currentTarget.innerHTML = "2x";
-    const audios = document.querySelectorAll("audio")
+    const changeSpeedTo = (speed, button) => {
+      event.currentTarget.innerHTML = `${speed}x`;
+      const audios = document.querySelectorAll("audio")
       audios.forEach((audio)=>{
-        audio.playbackRate = 2;
+        audio.playbackRate = speed;
       })
-  })
-  header.appendChild(button)
+    }
 
+    button.addEventListener("click", () => {
+     if (button.innerHTML === "1x") {
+      changeSpeedTo(1.5, button)
+     } else if (button.innerHTML === "1.5x") {
+      changeSpeedTo(2, button)
+     } else if (button.innerHTML === "2x") {
+      changeSpeedTo(1, button)
+     }
+    })
 
-}, 1000);
-
+    header.appendChild(button)
+  }
+});

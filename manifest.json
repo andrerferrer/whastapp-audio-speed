@@ -1,7 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "whatsappExtension",
+  "name": "Whatsapp audio speeder",
+  "description": "a chrome extension to speed your audios created by andrerferrer",
   "version": "0.1",
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
   "content_scripts": [
     {
         "matches": [
@@ -16,3 +23,5 @@
     }
   ]
 }
+
+
